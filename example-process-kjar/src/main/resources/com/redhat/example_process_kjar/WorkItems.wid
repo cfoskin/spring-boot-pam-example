@@ -1,0 +1,11 @@
+[
+  [
+        "name" : "MyWorkItemHandler",
+        "parameters" : [ 
+            "SampleParam" : new StringDataType(),
+            "SampleParamTwo" : new StringDataType()
+         ], 
+    "displayName" : "MyWorkItemHandler",
+    "icon" : "../../../global/defaultlogicon.gif" 
+  ]
+]
