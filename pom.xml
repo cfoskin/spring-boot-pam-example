@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    
-    
+
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.redhat</groupId>
     <artifactId>springboot-pam-wih-example-parent</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    
+
     <name>springboot-pam-wih-example-parent</name>
     <url>http://maven.apache.org</url>
 
@@ -99,10 +99,35 @@
                 <artifactId>jackson-annotations</artifactId>
                 <version>${version.com.fasterxml.jackson}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
+                <version>3.2.6</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-jaxrs</artifactId>
+                <version>1.5.15</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.ws.rs</groupId>
+                        <artifactId>jsr311-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>swagger-ui</artifactId>
+                <version>2.2.10</version>
+            </dependency>
+
         </dependencies>
+
+
     </dependencyManagement>
-    
-       <build>
+
+    <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
@@ -122,7 +147,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-           
+
         </plugins>
         <resources>
             <resource>
@@ -132,7 +157,7 @@
         </resources>
     </build>
 
-<!-- https://access.redhat.com/maven-repository -->
+    <!-- https://access.redhat.com/maven-repository -->
     <repositories>
         <repository>
             <id>jboss-eap-repository-group</id>
